@@ -8,13 +8,13 @@ body {
   height: 100px;
   width: 100%;
   z-index: 0;
-  position: relative;
+  position: absolute;
 }
 
 .car {
   width: 30px;
   height: 30px;
-  position: relative;
+  position: absolute;
   z-index: 2;
 }
 
@@ -22,11 +22,12 @@ body {
   background-color: red;
   top: 10%;
   left: 0%;
+  /*position: absolute;*/
 }
 
 #two {
   background-color: blue;
-  top: 30%;
+  bottom: 10%;
   left: 0%;
 }
 
