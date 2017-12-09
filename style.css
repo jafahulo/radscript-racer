@@ -1,0 +1,40 @@
+body {
+  background-color: black;
+  margin: 15px;
+}
+
+.track {
+  background-color: darkgrey;
+  height: 100px;
+  width: 100%;
+  z-index: 0;
+  position: relative;
+}
+
+.car {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+#one {
+  background-color: red;
+  top: 10%;
+  left: 0%;
+}
+
+#two {
+  background-color: blue;
+  top: 30%;
+  left: 0%;
+}
+
+#finishline {
+  position: relative;
+  float: right;
+  background-color: white;
+  height: 100%;
+  width: 30px;
+  z-index: 1;
+}
