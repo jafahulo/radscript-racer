@@ -5,9 +5,21 @@
 
 // window.getComputedStyle(one).left  <=== returns the value of the left position.
 
-console.log("this is tstill working?");
+let carOnePosition = document.getElementById("one").style.left;
 
-const moveCar = (num) =>
-{
-  document.getElementById("one").style.left = num + "%";
+// Updates the carOnePosition variable. Enter the % of the race completed.
+const updateCarOnePosition = (percent) => {
+  carOnePosition = percent + "%";
 }
+
+//
+const checkForWinner = () => {
+  let carPos = document.getElementById("one").style.left;
+  console.log(carPos);
+  if (carPos > 100) {
+    alert("teh winner!");
+  }
+}
+
+// Set initial car positions
+updateCarOnePosition(0);
