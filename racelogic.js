@@ -5,21 +5,31 @@
 
 // window.getComputedStyle(one).left  <=== returns the value of the left position.
 
-let carOnePosition = document.getElementById("one").style.left;
+let carPosition = document.getElementById("one").style.left;
+let carMax = 100;
 
 // Updates the carOnePosition variable. Enter the % of the race completed.
-const updateCarOnePosition = (percent) => {
-  carOnePosition = percent + "%";
+const updateCarPosition = (percent) => { // add the second param to define car
+  carPosition = percent + "%";
 }
 
-//
+// Checks to see if a car has crossed the finish line
 const checkForWinner = () => {
-  let carPos = document.getElementById("one").style.left;
-  console.log(carPos);
-  if (carPos > 100) {
+  console.log(carPosition);
+  if (carPosition > carMax) {
     alert("teh winner!");
   }
 }
 
-// Set initial car positions
+// this divides the number of button presses needed to win the game
+const setPresses = (presses) => {
+
+}
+
+// function with initial settings for game
+const initializeGame = () => {
 updateCarOnePosition(0);
+}
+
+// inititialize the game
+initializeGame();
