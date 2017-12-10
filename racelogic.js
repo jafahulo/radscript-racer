@@ -4,12 +4,17 @@
 let carMax = 100;
 let pressDistance = 0;
 const carArray = ["one", "two"];
-let staticPercent = 0;
+let staticPercentOne = 0;
+let staticPercentTwo = 0;
 
 // Updates the carOnePosition variable. Enter the % of the race completed.
 const changeCarPosition = (num, car) => {
-  // debugger;
-  staticPercent = num;
+  if (car == 0) {
+    staticPercentOne = num;
+  } else if (car == 1) {
+    staticPercentTwo = num;
+  }
+
   document.getElementById(carArray[car]).style.left = num + "%";
 }
 
@@ -28,14 +33,12 @@ const setPressNumber = (presses) => {
 }
 
 // function that actually moves the car "press"
-const moveCarOne = () => {
-  // add event listener
-  return changeCarPosition((staticPercent + pressDistance), 0);
-}
-
-const moveCarTwo = () => {
-  // add event listener
-  return changeCarPosition((staticPercent + pressDistance), 1);
+const moveCar = (car) => {
+  if (car == 0) {
+    return changeCarPosition((staticPercentOne + pressDistance), car);
+  } else if (car == 1) {
+    return changeCarPosition((staticPercentTwo + pressDistance), car);
+  }
 }
 
 // function with initial settings for game
