@@ -22,7 +22,6 @@ body {
   background-color: red;
   top: 10%;
   left: 0%;
-  /*position: absolute;*/
 }
 
 #two {
@@ -32,7 +31,6 @@ body {
 }
 
 #finishline {
-  position: relative;
   float: right;
   background-color: white;
   height: 100%;
