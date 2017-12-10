@@ -1,7 +1,6 @@
-// move the car at increments of 100% / the number of keypresses.
 // when it goes to >= 100%, then display that there's a winner
-
-let carMax = 100;
+// debugger;
+let carMax = 97;
 let pressDistance = 0;
 const carArray = ["one", "two"];
 let staticPercentOne = 0;
@@ -19,9 +18,10 @@ const changeCarPosition = (num, car) => {
 
 // Checks to see if a car has crossed the finish line
 const checkForWinner = () => {
-  console.log(carPosition);
-  if (carPosition > carMax) {
-    alert("teh winner!");
+  if (staticPercentOne > carMax) {
+    alert("Red is teh winner!");
+  } else if (staticPercentTwo > carMax) {
+    alert("Blue is teh winner!");
   }
 }
 
@@ -34,10 +34,11 @@ const setPressNumber = (presses) => {
 // function that actually moves the car "press"
 const moveCar = (car) => {
   if (car == 0) {
-    return changeCarPosition((staticPercentOne + pressDistance), car);
+    changeCarPosition((staticPercentOne + pressDistance), car);
   } else if (car == 1) {
-    return changeCarPosition((staticPercentTwo + pressDistance), car);
+    changeCarPosition((staticPercentTwo + pressDistance), car);
   }
+  checkForWinner();
 }
 
 document.addEventListener("keydown", (event) => {
@@ -54,8 +55,8 @@ const initializeGame = () => {
 changeCarPosition(0, 0);
 changeCarPosition(0, 1);
 setPressNumber(50);
-
 }
 
 // inititialize the game
+// debugger;
 initializeGame();
