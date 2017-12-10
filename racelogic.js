@@ -14,7 +14,6 @@ const changeCarPosition = (num, car) => {
   } else if (car == 1) {
     staticPercentTwo = num;
   }
-
   document.getElementById(carArray[car]).style.left = num + "%";
 }
 
@@ -40,6 +39,14 @@ const moveCar = (car) => {
     return changeCarPosition((staticPercentTwo + pressDistance), car);
   }
 }
+
+document.addEventListener("keydown", (event) => {
+  if (event.key == "d") {
+    moveCar(1);
+  } else if (event.keyCode == "39") {
+    moveCar(0);
+  }
+});
 
 // function with initial settings for game
 const initializeGame = () => {
