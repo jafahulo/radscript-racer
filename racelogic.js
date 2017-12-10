@@ -20,8 +20,10 @@ const changeCarPosition = (num, car) => {
 const checkForWinner = () => {
   if (staticPercentOne > carMax) {
     alert("Red is teh winner!");
+    initializeGame();
   } else if (staticPercentTwo > carMax) {
     alert("Blue is teh winner!");
+    initializeGame();
   }
 }
 
